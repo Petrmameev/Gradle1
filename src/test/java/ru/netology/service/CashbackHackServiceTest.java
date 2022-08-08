@@ -1,17 +1,16 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
+import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
     @Test
-    void shouldBuyMore100ForCashback(){
+    public void shouldBuyMore100ForCashback(){
         CashbackHackService cashbackHackService = new CashbackHackService();
         int actual = cashbackHackService.remain(1900);
         int expected = 100;
-        assertEquals(actual, expected);
-
+        Assert.assertEquals(expected, actual);
     }
     @Test
     public void shouldReturn0IfAmountMultipleBoundary() {
@@ -19,7 +18,7 @@ public class CashbackHackServiceTest {
         int expected = 0;
         int actual = cashbackHackService.remain(2000);
 
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
 
     }
     @Test
@@ -27,8 +26,7 @@ public class CashbackHackServiceTest {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int expected = 330;
         int actual = cashbackHackService.remain(670);
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
-
 
 }
